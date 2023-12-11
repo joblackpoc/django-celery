@@ -1,9 +1,17 @@
 version: '3.8'
 
 services:
-
   django:
     container_name: django
     build:
-      context:.
-      dockerfile:./compose/django/Dockerfile
+      context:./dcelery
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./dcelery:/usr/src/app/
+    ports:
+      - 8001:8000
+    environment:
+     - DEBUG=1
+     - SECRETE_KEY=django-insecure-)gndbmcd+j!ykvrbz7w0o5=w*%7mi!m5^0oo4-8@#t931p0s8g
+     - ALLOWED_HOSTS=localhost,127.0.0.1
+     
