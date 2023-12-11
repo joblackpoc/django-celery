@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+
+  django:
+    container_name: django
+    build:
+      context:.
+      dockerfile:./compose/django/Dockerfile
